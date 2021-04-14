@@ -1,31 +1,52 @@
 //chiedo all'utente di scrivere una parola
 
 var parolaUtente =prompt("Scrivi una parola");
-console.log(parolaUtente)
+// console.log(parolaUtente)
 
 
-// rendo la parola in un array usando il metodo split
+function controlloParola(parola){
 
-var parolaUtenteDivisa = parolaUtente.split("")
-console.log(parolaUtenteDivisa)
+    // rendo la parola in un array usando il metodo split
+
+    var parolaUtenteDivisa = parola.split("")
+    console.log(parolaUtenteDivisa)
 
 
-//inverto l'ordine delle lettere usando il metodo reverse()
+    //inverto l'ordine delle lettere usando il metodo reverse()
 
-var parolaUtenteDivisa = parolaUtenteDivisa.reverse()
-console.log(parolaUtenteDivisa)
+    var parolaUtenteInversa = parolaUtenteDivisa.reverse()
+    console.log(parolaUtenteDivisa)
 
-//rendol'array in una parola con lettere unite
 
-var parolaInvertita = parolaUtenteDivisa.join("")
-console.log(parolaInvertita)
+    //rendo l'array una parola con lettere unite
 
-//faccio un if/else per fare il paragone
+    parolaUtenteInversa = parolaUtenteDivisa.join("")
+    console.log(parolaUtenteInversa)
 
-if (parolaUtente===parolaInvertita){
+    //faccio un if/else per fare il paragone
 
-    console.log("le due parole sono uguali quindi è palindroma")
+    if (parolaUtente===parolaUtenteInversa){
+        return true
+    }else{
+
+        return false
+    }
+
+
+}
+
+var risultato= controlloParola(parolaUtente)
+
+if (risultato){
+    console.log("La parola inserita è palindroma")
 }else{
 
-    console.log("le due parole Non sono uguali quindi NON è palindroma")
+    console.log("la parola inserita non è palindroma")
 }
+
+
+
+
+
+
+
