@@ -1,61 +1,72 @@
 
-//utente scegli un numero da uno a 5 tramite un prompt
+//utente sceglie prima opari o dispari poi un numero da uno a 5 tramite un prompt
+
+var pariDispari = prompt("scegli pari o dispari")
+console.log(pariDispari)
 
 var sceltaNumeroUtente =parseInt(prompt("scegli un numero da 1 a 5"));
 
-// console.log(sceltaNumero);
-
-
-//verifico se è pari o dispari tramite un if e la %
-var numeroPari;
-// var sceltaNumeroUtentePari;
-// var sceltaNumeroUtenteDispari;
-
 if(sceltaNumeroUtente % 2 === 0){
-    // sceltaNumeroUtentePari
-    console.log("il numero da te scelto " + sceltaNumeroUtente + " è pari" )
+// sceltaNumeroUtentePari
+console.log("il numero da te scelto " + sceltaNumeroUtente + " è pari" )
 }else {
-    // sceltaNumeroUtenteDispari
-    console.log("il numero da te scelto " + sceltaNumeroUtente + " è dispari" )
+// sceltaNumeroUtenteDispari
+console.log("il numero da te scelto " + sceltaNumeroUtente + " è dispari" )
 }
 
 
-//genero un numero random per il pc da 1 a 5
-var numeroPC = Math.floor(Math.random() * 6); 
-console.log("il numero scelto dal PC è " + numeroPC)
+//genero un numero random per il pc da 1 a 5 usando una funzione
+
+function numeroRandom(){
+
+return (Math.floor(Math.random() * 6))
+}
+
+var pc = numeroRandom();
+var sommaPari = pari(pc, sceltaNumeroUtente);
+
+console.log(numeroRandom())
 
 //faccio la somma dei due numeri
-var somma = sceltaNumeroUtente + numeroPC
+var numeroPC = numeroRandom()
+var somma = (sceltaNumeroUtente + numeroPC)
 console.log(somma)
+console.log("La somma del numero scelto dall'utente e quello del pc è " + somma)
 
-//faccio un if/else per controllare se la somma è pari o dispari
-// if (sceltaNumeroUtente % 2 === 0 && somma % 2 === 0){
+// faccio un if/else per controllare se la somma è pari o dispari
 
-//     console.log("utente vince")
-// }else {
+//
 
-//     console.log("PC vince")
-// }
+//function winner(num1, num2, sceltaUtente) {
+// // pari
+// // confrontare il risultato della funzione pari con sceltaUtente
+//}
 
+function pari(num1, num2) {
 
-function controlloPoD(pariodispari){
+var sommaNumeri = num1+num2;
 
-    if (sceltaNumeroUtente % 2 === 0 && somma % 2 === 0){
-    return true
-    }else {
+if ((sommaNumeri % 2=== 0) == true){
 
-        return false
-    }
-}
-
-var risultato = controlloPoD(somma)
-if (risultato){
-
-    console.log("utente vince")
+return true
 }else {
 
-    console.log("PC vince")
+return false
 }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
