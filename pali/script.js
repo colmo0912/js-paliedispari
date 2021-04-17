@@ -28,10 +28,8 @@ function controlloParola(parola){
     if (parolaUtente===parolaUtenteInversa){
         return true
     }else{
-
         return false
     }
-
 
 }
 
