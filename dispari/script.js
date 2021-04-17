@@ -4,14 +4,15 @@
 var pariDispari = prompt("scegli pari o dispari")
 console.log(pariDispari)
 
-var sceltaNumeroUtente =parseInt(prompt("scegli un numero da 1 a 5"));
+var sceltaNumeroUtente;
 
-if(sceltaNumeroUtente % 2 === 0){
-// sceltaNumeroUtentePari
-console.log("il numero da te scelto " + sceltaNumeroUtente + " è pari" )
+if (pariDispari === "pari" ){
+
+    sceltaNumeroUtente = isPari()
+    console.log("il numero da te scelto " + sceltaNumeroUtente + " è pari" )
 }else {
-// sceltaNumeroUtenteDispari
-console.log("il numero da te scelto " + sceltaNumeroUtente + " è dispari" )
+    sceltaNumeroUtente = isDispari()
+    console.log("il numero da te scelto " + sceltaNumeroUtente + " è dispari" )
 }
 
 
@@ -22,53 +23,68 @@ function numeroRandom(){
 return (Math.floor(Math.random() * 6))
 }
 
-var pc = numeroRandom();
-var sommaPari = pari(pc, sceltaNumeroUtente);
-
-console.log(numeroRandom())
-
 //faccio la somma dei due numeri
 var numeroPC = numeroRandom()
-var somma = (sceltaNumeroUtente + numeroPC)
+console.log(numeroPC)
+var somma = sceltaNumeroUtente + numeroPC
 console.log(somma)
 console.log("La somma del numero scelto dall'utente e quello del pc è " + somma)
 
-// faccio un if/else per controllare se la somma è pari o dispari
+function risultatoPariODispari(sommaNumeri) {
 
-//
+    if ((sommaNumeri % 2=== 0) == true){
 
-//function winner(num1, num2, sceltaUtente) {
-// // pari
-// // confrontare il risultato della funzione pari con sceltaUtente
-//}
+    return true
+    }else {
 
-function pari(num1, num2) {
+    return false
+    }
 
-var sommaNumeri = num1+num2;
+}
 
-if ((sommaNumeri % 2=== 0) == true){
+var sommaPari = risultatoPariODispari(somma);
+console.log(sommaPari)
 
-return true
+
+if (pariDispari === "pari" && sommaPari === true){
+
+    console.log("L'utente vince con il risultato pari")
+}else if(pariDispari === "dispari" && sommaPari === false){
+
+    console.log("L'utente vince con il risultato dispari")
 }else {
 
-return false
+    if(sommaPari === false){
+
+        console.log("Il PC vince con il risultato dispari")
+
+    }else {
+
+        console.log("Il PC vince con il risultato pari")
+    }
+
 }
 
 
+//devo creare una funzione che controlli che il numero sia pari
 
+function isPari (){
+
+    var numero;
+do{ 
+    numero =parseInt(prompt("scegli un numero da 1 a 5 pari"));
+}while (numero % 2 !== 0) 
+return numero
 }
 
+function isDispari (){
 
-
-
-
-
-
-
-
-
-
-
+    var numero;
+do{ 
+    numero =parseInt(prompt("scegli un numero da 1 a 5 dispari"));
+}while (numero % 2 === 0) 
+return numero
+}
 
 
 
